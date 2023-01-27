@@ -22,8 +22,34 @@ border: 1px solid red;
     }
 
 
+    .lista-estudiante {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
     .lista-estudiante li {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 15px;
+        flex-direction: column;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+        background-color: #fff;
+        border-left: 4px solid #fff;
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        border-radius: 4px;
+        overflow: hidden;
     }
+
+    .lista-estudiante li:hover {
+        color: burlywood;
+      }
+
+      .lista-estudiante li .title {
+        font-weight: bold;
+        font-size: 18px;
+        position: relative;
+        z-index: 1;
+        line-height: 24px;
+      }

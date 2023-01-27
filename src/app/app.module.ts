@@ -8,6 +8,8 @@ import { LoginAdministradorComponent } from './component/login-administrador/log
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { StudentsComponent } from './component/students/students.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { DirectivasComponent } from './components/directivas/directivas.component';
+import { DirectivaPersonalizadaDirective } from './directives/directiva-personalizada.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     LoginAdministradorComponent,
     NavbarComponent,
     StudentsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DirectivasComponent,
+    DirectivaPersonalizadaDirective
   ],
   imports: [
     BrowserModule

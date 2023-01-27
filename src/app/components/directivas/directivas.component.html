@@ -1,0 +1,22 @@
+<h1>Directivas Ejemplos</h1>
+<h1> {{subtitulo}}</h1>
+<p [style.border]="variable === 10? '1px solid black': '1px solid red'">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+<p [ngClass]="variable === 10? 'borde-red': 'borde-green'">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+<h1>Directivas Estructurales</h1>
+
+<ul class="lista-estudiante">
+    <li *ngFor="let estudiante of listaEstudante" [ngClass]="estudiante.estaActivo? 'activo': 'inactivo'">{{estudiante.nombre}} <button *ngIf="!estudiante.estaActivo">Activar</button></li>
+    
+</ul>
+
+<div [ngSwitch]="estudianteActual.nombre">
+<div *ngSwitchCase="'Pepe'">Pepe se encuentra en la plataforma</div>
+<div *ngSwitchCase="'Manuel'">Karla se encuentra en la plataforma</div>
+<div *ngSwitchDefault="">{{estudianteActual.nombre}} No se encuentra en la plataforma</div>
+</div>
+
+
+<h1>Directiva Personalizada</h1>
+<p appDirectivaPersonalizada>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>

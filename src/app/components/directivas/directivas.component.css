@@ -1,0 +1,29 @@
+.subtitulo{
+	font-size: 2em;
+}
+.border-negro{
+border: 1px solid black;
+}
+
+.borde-red{
+border: 1px solid red;
+}
+
+.borde-green{
+    border: 1px solid green;
+    }
+.activo{
+    color:green;
+    border: 1px solid green;
+    }
+.inactivo{
+    color:red;
+    border: 1px solid red;
+    }
+
+
+    .lista-estudiante li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }

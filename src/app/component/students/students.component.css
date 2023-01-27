@@ -77,9 +77,10 @@
     }
     
     .fl-table tr:nth-child(even) {
-        background: #F8F8F8;
+        background-color: red;
     }
-
+      
+    .fl-table tr:hover {background-color: green;}
     @media (max-width: 9000px) {
         .fl-table {
             display: block;

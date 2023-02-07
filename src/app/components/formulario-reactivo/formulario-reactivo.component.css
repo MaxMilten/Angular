@@ -1,0 +1,12 @@
+.paddingCell
+{
+    padding-left: 15px;
+}
+
+.boderTable
+{
+
+    border-radius:5px;
+    border-color: var(--bs-border-color-translucent);
+    color: var(--bs-card-color);
+}

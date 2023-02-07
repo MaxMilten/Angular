@@ -1,0 +1,142 @@
+<form [formGroup]="formularioLogin" class="needs-validation was-validated" (ngSubmit)="login()">
+    
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span>&#9733; <b>Datos Usuario</b>&#9733;</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <table class="card card-body">
+            <tr>
+              <td>
+                <div>
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input formControlName="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div class="valid-tooltip" *ngIf="formularioLogin.controls['correo'].touched && formularioLogin.controls['correo'].valid">
+                    Looks good!
+                  </div>
+                  <div class="invalid-tooltip" *ngIf="formularioLogin.controls['correo'].errors?.['required']">
+                    Please Insert a Email.
+                  </div>
+                  <div class="invalid-tooltip" *ngIf="formularioLogin.controls['correo'].errors?.['pattern']">
+                    Please Insert a valid Email.
+                  </div>
+                </div>
+              </td>
+              <td class="paddingCell">
+                <div>
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input formControlName="contrasena" type="password" class="form-control" id="exampleInputPassword1" required>
+                  <div class="valid-tooltip" data-bs-placement="top" *ngIf="formularioLogin.controls['contrasena'].valid">
+                    Looks good!
+                  </div>
+                  <div class="invalid-tooltip" data-bs-placement="top" *ngIf="formularioLogin.controls['contrasena'].errors?.['required']">
+                    Please Insert a Password.
+                  </div>
+                  <div class="invalid-tooltip"  data-bs-placement="top" *ngIf="formularioLogin.controls['contrasena'].errors?.['status']">
+                    Please Insert a valid Password.
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          </table>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span>&#9733; <b>Datos Personales</b>&#9733;</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <table class="card card-body">
+            <tr>
+              <td>
+                <label for="name" class="form-label">Nombres</label>
+                <input placement="top" ngbTooltip="Ingrese sus Nombres" formControlName="nombre" type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
+                <div class="valid-tooltip" *ngIf="formularioLogin.controls['nombre'].touched && formularioLogin.controls['nombre'].valid">
+                  Datos Correctos
+                </div>
+                <div class="invalid-tooltip" *ngIf="formularioLogin.controls['nombre'].errors?.['required']">
+                  Inserte el Nombre del Usuario
+                </div>
+              </td>
+              <td class="paddingCell">
+                <div>
+                  <label for="name" class="form-label">Apellidos</label>
+                  <input placement="top" ngbTooltip="Ingrese sus Apellidos" formControlName="apellido" type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
+                  <div class="valid-tooltip" placement="top" *ngIf="formularioLogin.controls['apellido'].touched && formularioLogin.controls['apellido'].valid">
+                    Datos Correctos
+                  </div>
+                  <div class="invalid-tooltip" *ngIf="formularioLogin.controls['apellido'].errors?.['required']">
+                    Inserte el Apellido del Usuario
+                  </div>
+                </div>
+                
+              </td>
+              <td class="paddingCell">
+                <label for="age" class="form-label">Edad</label>
+                <input formControlName="edad" type="number" class="form-control" id="age" aria-describedby="emailHelp" required>
+                <div class="valid-tooltip" *ngIf="formularioLogin.controls['edad'].touched && formularioLogin.controls['edad'].valid">
+                  Datos Correctos
+                </div>
+                <div class="invalid-tooltip" *ngIf="formularioLogin.controls['edad'].errors?.['required']">
+                  Inserte Edad del Usuario
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="date" class="form-label">Fecha Nacimiento</label>
+                <input data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="This top tooltip is themed via CSS variables." formControlName="fechaNac" type="date" class="form-control" id="date" aria-describedby="emailHelp" required>
+                <div class="valid-tooltip" *ngIf="formularioLogin.controls['fechaNac'].touched && formularioLogin.controls['fechaNac'].valid">
+                  Datos Correctos
+                </div>
+                <div class="invalid-tooltip" *ngIf="formularioLogin.controls['fechaNac'].errors?.['required']">
+                  Inserte Fecha de Nacimiento
+                </div>
+              </td>
+
+              <td class="paddingCell">
+                <label for="country" class="form-label">Pais Nacimiento</label>
+                <input class="form-control" id="country" aria-describedby="emailHelp" required [ngModelOptions]="{ standalone: true }" id="typeahead-format" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter"/>
+                <div class="valid-tooltip" *ngIf="formularioLogin.controls['pais'].touched && formularioLogin.controls['pais'].valid">
+                  Datos Correctos
+                </div>
+                <div class="invalid-tooltip" *ngIf="formularioLogin.controls['pais'].errors?.['required']">
+                  Inserte Pais Nacimiento
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+
+
+
+    <div class="mb-3 form-check">
+      <input formControlName="recordarCredencial" type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <!--<button type="submit" class="btn btn-primary" (click)="login()" >Submit</button>-->
+    
+    <div class="buttons">
+      <button ngbPopover="Registro de Cliente" triggers="mouseenter:mouseleave" popoverTitle="Registro Cliente" type="submit" class="btn btn-primary" [disabled]="formularioLogin.invalid">Submit</button>
+      &nbsp;
+      <button ngbPopover="Reseteo de Datos de Cliente" triggers="mouseenter:mouseleave" popoverTitle="Registro Cliente" type="reset" class="btn btn-secondary"  >reset</button>
+      &nbsp;
+      <button ngbPopover="Inicio de Sesion" triggers="mouseenter:mouseleave" popoverTitle="Registro Cliente" type="button" class="btn btn-danger"   >login</button>
+      &nbsp;
+    </div>
+    
+  </form>
+
+  <div>
+    
+  </div>
+  
